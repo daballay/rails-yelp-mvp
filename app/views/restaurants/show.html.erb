@@ -1,0 +1,16 @@
+<h1><%= @restaurant.name %></h1>
+<p><strong>Address:</strong> <%= @restaurant.address %></p>
+<p><strong>Phone number:</strong> <%= @restaurant.phone_number %></p>
+<p><strong>Category:</strong> <%= @restaurant.category %></p>
+<p><strong>Chef:</strong> <%= @restaurant.chef_name %></p>
+
+<h2>Reviews</h2>
+<% @restaurant.reviews.each do |review| %>
+<p><%= review.content %></p>
+<% end %>
+
+
+<%= link_to "home", restaurants_path %> ||
+<%= link_to "Editar restaurant", edit_restaurant_path %> ||
+<%= link_to "Ver Chef", chef_restaurant_path %> ||
+<%= link_to "Deja un review", new_restaurant_review_path(@restaurant) %>

@@ -1,0 +1,11 @@
+<h1>Bienvenido a Restaurants App</h1>
+<p>Nuestros resturantes:</p>
+
+<ol>
+<% @restaurants.each do |restaurant| %>
+<li><%= link_to restaurant.name, restaurant_path(restaurant)%></li>
+<% end %>
+</ol>
+
+<%= link_to "Crea un nuevo restaurant", new_restaurant_path %> ||
+<%= link_to "Mejores restaurantes italianos", top_restaurants_path %>
