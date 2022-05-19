@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def new
@@ -23,12 +24,12 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant.update(restaurant_params)
-    redirect_to
+    redirect_to restaurant_path
   end
 
   def destroy
-    @resturant.destroy
-    redirect_to
+    @restaurant.destroy
+    redirect_to restaurants_path
   end
 
   def top

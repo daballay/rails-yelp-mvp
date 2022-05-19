@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     # post restaurant/:restaurant_id/review
     resources :reviews, only: [:new, :create]
   end
+  resources :reviews, only: [:destroy]
 end
